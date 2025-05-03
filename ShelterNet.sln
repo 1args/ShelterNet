@@ -4,6 +4,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{41403594-E9B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelterNet.Domain", "src\ShelterNet.Domain\ShelterNet.Domain.csproj", "{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelterNet.Infrastructure", "src\ShelterNet.Infrastructure\ShelterNet.Infrastructure.csproj", "{B1274128-18EB-4BB5-8613-4EDAA68CE5D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "localhost", "localhost", "{58CBEBC2-D5AE-4A00-9F9A-4660F30A104F}"
+	ProjectSection(SolutionItems) = preProject
+		localhost\docker-compose.yml = localhost\docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -11,11 +18,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716} = {41403594-E9BB-4343-BFCB-41137809A5E9}
+		{B1274128-18EB-4BB5-8613-4EDAA68CE5D1} = {41403594-E9BB-4343-BFCB-41137809A5E9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E453C5B9-51C3-49AA-A3BB-7BCD5DB5C716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1274128-18EB-4BB5-8613-4EDAA68CE5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1274128-18EB-4BB5-8613-4EDAA68CE5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1274128-18EB-4BB5-8613-4EDAA68CE5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1274128-18EB-4BB5-8613-4EDAA68CE5D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

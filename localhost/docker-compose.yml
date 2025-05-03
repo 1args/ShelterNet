@@ -1,0 +1,21 @@
+version: '3.9'
+
+volumes:
+  shelternet-postgres:
+    
+services:
+    
+  #PostgreSQL
+  postgres:
+    container_name: shelternet-postgres
+    image: postgres/latest
+    ports:
+      - '5432:5432'
+    restart: on-failure
+    environment:
+      POSTGRES_DB: shelternet-general
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bvytnfr,jkmyj
+    volumes:
+      - postit-postgres:/var/lib/postgresql/data
+      

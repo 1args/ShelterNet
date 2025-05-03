@@ -31,7 +31,7 @@ public class Warehouse : Entity<Guid>
     /// <summary>Date the record was last updated</summary>
     public DateTime? UpdatedAt { get; set; }
 
-    /// <summary>List of products stored in the warehouse</summary>
+    /// <summary>List of resources stored in the warehouse</summary>
     public ICollection<InventoryItem> InventoryItems { get; set; }
     
     public Warehouse() { }

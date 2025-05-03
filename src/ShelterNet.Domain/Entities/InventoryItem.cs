@@ -9,7 +9,7 @@ public class InventoryItem : Entity<Guid>
     public Guid WarehouseId { get; set; }
 
     /// <summary>Item identifier</summary>
-    public Guid GoodId { get; set; }
+    public Guid ResourceId { get; set; }
     
     /// <summary>Number of units of goods</summary>
     public int Quantity { get; set; }
@@ -26,11 +26,11 @@ public class InventoryItem : Entity<Guid>
     /// <summary>Date the record was last updated</summary>
     public DateTime? UpdatedAt { get; set; }
     
-    /// <summary>Warehouse object</summary>
+    /// <summary>EF navigation property for the warehouse</summary>
     public Warehouse Warehouse { get; set; } = null!;
     
-    /// <summary>Object of goods</summary>
-    public Good Good { get; set; } = null!;
+    /// <summary>EF navigation property for the resourse</summary>
+    public Resource Resource { get; set; } = null!;
 
     public InventoryItem() { }
 }

@@ -8,7 +8,7 @@ services:
   #PostgreSQL
   postgres:
     container_name: shelternet-postgres
-    image: postgres/latest
+    image: postgres:latest
     ports:
       - '5432:5432'
     restart: on-failure
@@ -17,5 +17,5 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: bvytnfr,jkmyj
     volumes:
-      - postit-postgres:/var/lib/postgresql/data
+      - shelternet-postgres:/var/lib/postgresql/data
       

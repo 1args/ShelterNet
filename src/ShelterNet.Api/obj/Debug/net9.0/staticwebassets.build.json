@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "9e14rlRObbW21W+mPojXkMXa4mEk+35BeVKzJ4ndDOM=",
+  "Source": "ShelterNet.Api",
+  "BasePath": "_content/ShelterNet.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

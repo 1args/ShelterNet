@@ -1,0 +1,12 @@
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\bin\Debug\net9.0\ShelterNet.Contracts.deps.json
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\bin\Debug\net9.0\ShelterNet.Contracts.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\bin\Debug\net9.0\ShelterNet.Contracts.pdb
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.AssemblyInfoInputs.cache
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.AssemblyInfo.cs
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.sourcelink.json
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\refint\ShelterNet.Contracts.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.pdb
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ref\ShelterNet.Contracts.dll

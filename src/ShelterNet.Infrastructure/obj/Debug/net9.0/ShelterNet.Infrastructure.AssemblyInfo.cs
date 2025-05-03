@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShelterNet.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc3f1ed7dbe72297b66a84c86791ed2e90d32ab0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6e2ebd8c6c00dcb365f6548a2eca81fad87f158")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShelterNet.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShelterNet.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

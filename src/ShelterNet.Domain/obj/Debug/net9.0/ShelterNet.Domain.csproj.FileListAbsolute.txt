@@ -1,0 +1,12 @@
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\bin\Debug\net9.0\ShelterNet.Domain.deps.json
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\bin\Debug\net9.0\ShelterNet.Domain.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\bin\Debug\net9.0\ShelterNet.Domain.pdb
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.AssemblyInfoInputs.cache
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.AssemblyInfo.cs
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.csproj.CoreCompileInputs.cache
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.sourcelink.json
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\refint\ShelterNet.Domain.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ShelterNet.Domain.pdb
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Domain\obj\Debug\net9.0\ref\ShelterNet.Domain.dll

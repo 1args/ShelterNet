@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShelterNet.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+582bfaf22136f7508fb3b57540558598441ee5ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc3f1ed7dbe72297b66a84c86791ed2e90d32ab0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShelterNet.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShelterNet.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

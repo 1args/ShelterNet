@@ -16,6 +16,8 @@ public class TransferRequest : Entity<Guid>
     /// <summary>Identifier of the resource being transferred</summary>
     public Guid ResourceId { get; set; }
 
+    public Guid CreatorId { get; set; }
+
     /// <summary>Status of the transfer request</summary>
     public TransferStatus Status { get; set; }
 

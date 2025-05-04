@@ -27,4 +27,8 @@
       <ProjectReference Include="..\ShelterNet.Infrastructure\ShelterNet.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ErrorHandling\" />
+    </ItemGroup>
+
 </Project>

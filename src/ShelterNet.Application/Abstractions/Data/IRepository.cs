@@ -14,6 +14,11 @@ public interface IRepository<TEntity> where TEntity : class
         Expression<Func<TEntity, bool>> expression, 
         CancellationToken cancellationToken,
         bool tracking = true);
+
+    Task<IEnumerable<TEntity>> GetAllAsync(
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, bool>>? expression = null,
+        bool tracking = true);
     
     IQueryable<TEntity> AsQueryable(bool tracking = true);
     
@@ -26,4 +31,9 @@ public interface IRepository<TEntity> where TEntity : class
         CancellationToken cancellationToken,
         bool tracking = true,
         params Expression<Func<TEntity, object>>[] includes);
+    
+    Task<List<TEntity>> ToListAsync(
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, bool>>? expression = null,
+        bool tracking = true);
 }

@@ -153,3 +153,5 @@ C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\net9.0\Scalar.AspNetCore.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\net9.0\FluentEmail.Core.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Api\bin\Debug\net9.0\FluentEmail.Smtp.dll

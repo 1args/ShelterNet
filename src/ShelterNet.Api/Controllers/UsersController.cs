@@ -14,7 +14,7 @@ public class UsersController(
 {
     [HttpPost("register")]
     public async Task<IActionResult> RegisterAsync(
-        RegisterUserCommand command,
+        [FromBody] RegisterUserCommand command,
         CancellationToken cancellationToken)
     {
         await registerHandler.HandleAsync(command, cancellationToken);
@@ -23,7 +23,7 @@ public class UsersController(
 
     [HttpPost("login")]
     public async Task<ActionResult<LoginResponse>> LoginAsync(
-        LoginUserCommand command, 
+        [FromBody] LoginUserCommand command, 
         CancellationToken cancellationToken)
     {
         var response = await loginHandler.HandleAsync(command, cancellationToken);

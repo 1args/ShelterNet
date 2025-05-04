@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qarGJZsTDig=",
+  "dgSpecHash": "5gtiRJYMYDU=",
   "success": true,
   "projectFilePath": "C:\\Users\\incrysteer 1args\\RiderProjects\\ShelterNet\\src\\ShelterNet.Api\\ShelterNet.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\incrysteer 1args\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\incrysteer 1args\\.nuget\\packages\\fluentemail.core\\3.0.2\\fluentemail.core.3.0.2.nupkg.sha512",
+    "C:\\Users\\incrysteer 1args\\.nuget\\packages\\fluentemail.smtp\\3.0.2\\fluentemail.smtp.3.0.2.nupkg.sha512",
     "C:\\Users\\incrysteer 1args\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\incrysteer 1args\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.4\\microsoft.aspnetcore.authentication.jwtbearer.9.0.4.nupkg.sha512",
     "C:\\Users\\incrysteer 1args\\.nuget\\packages\\microsoft.aspnetcore.http\\2.3.0\\microsoft.aspnetcore.http.2.3.0.nupkg.sha512",

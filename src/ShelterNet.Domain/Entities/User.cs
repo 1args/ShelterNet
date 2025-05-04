@@ -19,8 +19,5 @@ public class User : Entity<Guid>
     /// <summary>User role in the system</summary>
     public UserRole Role { get; set; }
 
-    /// <summary>EF navigation property for the user's warehouse access permissions</summary>
-    public ICollection<WarehouseAccess> WarehouseAccesses { get; set; }
-
     public User() { }
 }

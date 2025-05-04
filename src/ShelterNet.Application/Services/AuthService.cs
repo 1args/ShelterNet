@@ -2,6 +2,7 @@ using System.Security.Claims;
 using ShelterNet.Application.Abstractions.Auth;
 using ShelterNet.Application.Abstractions.Data;
 using Microsoft.AspNetCore.Http;
+using ShelterNet.Application.Abstractions.Services;
 using ShelterNet.Application.Exceptions;
 using ShelterNet.Domain.Entities;
 

@@ -24,9 +24,5 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.Role)
             .IsRequired()
             .HasConversion<string>();
-                
-        builder.HasMany(u => u.WarehouseAccesses)
-            .WithOne(wa => wa.User)
-            .HasForeignKey(wa => wa.UserId);
     }
 }

@@ -10,8 +10,6 @@ public class ApplicationDbContext(
     
     public DbSet<User> Users { get; set; }
     
-    public DbSet<WarehouseAccess> WarehouseAccesses { get; set; }
-    
     public DbSet<InventoryItem> InventoryItems { get; set; }
     
     public DbSet<Resource> Resources { get; set; }

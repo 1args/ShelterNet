@@ -20,7 +20,7 @@ public sealed class RegisterUserCommandHandler(
         
         if (userExists)
         {
-            throw new ConflictException($"User with email {command.Email} already exists.");
+            throw new ConflictException($"User with email '{command.Email}' already exists.");
         }
         
         var passwordHash = passwordHasher.HashPassword(command.Password);

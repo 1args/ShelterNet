@@ -62,7 +62,22 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         return await query
             .SingleOrDefaultAsync(expression, cancellationToken);
     }
-    
+
+    public async Task<IEnumerable<TEntity>> GetAllAsync(
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, bool>>? expression = null,
+        bool tracking = true)
+    {
+        var query = AsQueryable(tracking);
+        
+        if (expression is not null)
+        {
+            query = query.Where(expression);
+        }
+
+        return await query.ToListAsync(cancellationToken);
+    }
+
     public IQueryable<TEntity> AsQueryable(bool tracking = true)
     {
         return tracking 
@@ -93,6 +108,21 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
             .Aggregate(query, (current, include) => current.Include(include));
 
         return await query.SingleOrDefaultAsync(expression, cancellationToken);
+    }
+
+    public async Task<List<TEntity>> ToListAsync(
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, bool>>? expression = null,
+        bool tracking = true)
+    {
+        var query = AsQueryable(tracking);
+        
+        if (expression is not null)
+        {
+            query = query.Where(expression);
+        }
+
+        return await query.ToListAsync(cancellationToken);
     }
 
     private Task<int> SaveChangesAsync(CancellationToken cancellationToken)

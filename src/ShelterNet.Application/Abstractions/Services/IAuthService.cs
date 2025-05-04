@@ -1,6 +1,6 @@
 using ShelterNet.Domain.Entities;
 
-namespace ShelterNet.Application.Abstractions.Auth;
+namespace ShelterNet.Application.Abstractions.Services;
 
 public interface IAuthService
 {

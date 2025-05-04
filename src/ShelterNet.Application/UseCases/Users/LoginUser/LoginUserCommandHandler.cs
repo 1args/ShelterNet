@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using ShelterNet.Application.Abstractions.Auth;
 using ShelterNet.Application.Abstractions.Data;
 using ShelterNet.Application.Abstractions.Messaging.Commands;
+using ShelterNet.Application.Abstractions.Services;
 using ShelterNet.Application.Exceptions;
 using ShelterNet.Contracts.ApiContracts.Responses;
 using ShelterNet.Domain.Entities;

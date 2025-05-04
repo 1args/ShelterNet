@@ -20,6 +20,5 @@ public static class CustomModelBuilder
         modelBuilder.ApplyConfiguration(new TransferRequestConfiguration());
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new WarehouseConfiguration());
-        modelBuilder.ApplyConfiguration(new WarehouseAccessConfiguration());
     }
 }

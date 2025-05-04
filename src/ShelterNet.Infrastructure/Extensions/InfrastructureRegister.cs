@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ShelterNet.Infrastructure.BackgroundServices;
 
 namespace ShelterNet.Infrastructure.Extensions;
 
@@ -7,8 +8,10 @@ public static class InfrastructureRegister
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDataAccess(configuration);
-        services.AddAuthRegister(configuration);
+        services.AddDataAccess(configuration)
+            .AddAuthRegister(configuration)
+            .AddSmtpConfiguration(configuration)
+            .AddHostedService<WarehouseMonitoringBackgroundService>();
         
         return services;
     }

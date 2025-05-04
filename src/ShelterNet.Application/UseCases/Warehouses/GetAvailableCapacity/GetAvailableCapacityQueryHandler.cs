@@ -11,18 +11,19 @@ public class GetAvailableCapacityQueryHandler(
 {
     public async Task<AvailableCapacityResponse> HandleAsync(GetAvailableCapacityQuery query, CancellationToken cancellationToken)
     {
-        var warehouse = await warehouseRepository.SingleOrDefaultAsync(
-            w => w.Id == query.WarehouseId,
+        var warehouse = await warehouseRepository.SingleOrDefaultWithIncludesAsync<ICollection<InventoryItem>, Resource>(
+            x => x.Id == query.WarehouseId,
             cancellationToken,
-            true,
-            w => w.InventoryItems);
+            x => x.InventoryItems, 
+            item => ((InventoryItem)item).Resource 
+        );
         
         if (warehouse is null)
         {
             throw new NotFoundException($"Warehouse '{query.WarehouseId}' not found.");
         }
 
-        var usedCapacity = warehouse.InventoryItems.Sum(i => i.Quantity);
+        var usedCapacity = warehouse.InventoryItems?.Sum(i => i.Quantity) ?? 0;
         return new AvailableCapacityResponse(warehouse.Capacity - usedCapacity);
     }
 }

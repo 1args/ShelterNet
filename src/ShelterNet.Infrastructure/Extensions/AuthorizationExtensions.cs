@@ -8,7 +8,7 @@ using AuthorizationOptions = ShelterNet.Infrastructure.Options.AuthorizationOpti
 
 namespace ShelterNet.Infrastructure.Extensions;
 
-public static class AuthExtensions
+public static class AuthorizationExtensions
 {
     public static IServiceCollection AddAuthRegister(this IServiceCollection services, IConfiguration configuration)
     {

@@ -1,4 +1,5 @@
 using ShelterNet.Domain.Enums;
+using ShelterNet.Domain.Primitives;
 
 namespace ShelterNet.Domain.Entities;
 

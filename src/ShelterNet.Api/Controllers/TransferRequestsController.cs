@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using ShelterNet.Api.Authorization;
 using ShelterNet.Application.Abstractions.Messaging.Commands;
 using ShelterNet.Application.UseCases.TransferRequests.ApproveTransferRequest;
 using ShelterNet.Application.UseCases.TransferRequests.CancelTransferRequest;
 using ShelterNet.Application.UseCases.TransferRequests.CompleteTransferRequest;
 using ShelterNet.Application.UseCases.TransferRequests.CreateTransferRequest;
 using ShelterNet.Application.UseCases.TransferRequests.RejectTransferRequest;
+using ShelterNet.Domain.Enums;
 
 namespace ShelterNet.Api.Controllers;
 
@@ -18,6 +20,7 @@ public class TransferRequestsController(
     ICommandHandler<RejectTransferRequestCommand> rejectTransferRequestHandler) : ControllerBase
 {
     [HttpPatch("approve")]
+    [HasPermission(Permission.Access)]
     public async Task<IActionResult> ApproveTransferRequestAsync(
         [FromRoute] ApproveTransferRequestCommand command,
         CancellationToken cancellationToken)
@@ -27,6 +30,7 @@ public class TransferRequestsController(
     }
     
     [HttpPatch("cancel")]
+    [HasPermission(Permission.Update)]
     public async Task<IActionResult> CancelTransferRequestAsync(
         [FromRoute] CancelTransferRequestCommand command,
         CancellationToken cancellationToken)
@@ -36,6 +40,7 @@ public class TransferRequestsController(
     }
     
     [HttpPatch("complete")]
+    [HasPermission(Permission.Update)]
     public async Task<IActionResult> CompleteTransferRequestAsync(
         [FromRoute] CompleteTransferRequestCommand command,
         CancellationToken cancellationToken)
@@ -45,8 +50,9 @@ public class TransferRequestsController(
     }
     
     [HttpPost("create")]
+    [HasPermission(Permission.Create)]
     public async Task<IActionResult> CreateTransferRequestAsync(
-        [FromRoute] CreateTransferRequestCommand command,
+        [FromBody] CreateTransferRequestCommand command,
         CancellationToken cancellationToken)
     {
         await createTransferRequestHandler.HandleAsync(command, cancellationToken);
@@ -54,6 +60,7 @@ public class TransferRequestsController(
     }
     
     [HttpPatch("reject")]
+    [HasPermission(Permission.Access)]
     public async Task<IActionResult> RejectTransferRequestAsync(
         [FromRoute] RejectTransferRequestCommand command,
         CancellationToken cancellationToken)

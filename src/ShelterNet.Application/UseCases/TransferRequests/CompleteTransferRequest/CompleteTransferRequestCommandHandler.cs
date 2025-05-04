@@ -18,7 +18,7 @@ public class CompleteTransferRequestCommandHandler(
         var transfer = await transferRequestRepository.SingleOrDefaultAsync(
             t => t.Id == command.TransferId,
             cancellationToken,
-            includes: tr => tr.Resource);
+             include:tr => tr.Resource);
         
         if (transfer is null)
         {

@@ -100,12 +100,30 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         Expression<Func<TEntity, bool>> expression,
         CancellationToken cancellationToken, 
         bool tracking = true,
-        params Expression<Func<TEntity, object>>[] includes)
+        Expression<Func<TEntity, object>>? include = null)
     {
         var query = AsQueryable(tracking);
 
-        query = includes
-            .Aggregate(query, (current, include) => current.Include(include));
+        if (include is not null)
+        {
+            query.Include(include);
+        }
+
+        return await query.SingleOrDefaultAsync(expression, cancellationToken);
+    }
+    
+    public async Task<TEntity?> SingleOrDefaultWithIncludesAsync<TPreviousProperty, TProperty>(
+        Expression<Func<TEntity, bool>> expression,
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, TPreviousProperty>> include1,
+        Expression<Func<TPreviousProperty, TProperty>> include2,
+        bool tracking = true)
+    {
+        var query = AsQueryable(tracking);
+
+        query = query
+            .Include(include1)
+            .ThenInclude(include2);
 
         return await query.SingleOrDefaultAsync(expression, cancellationToken);
     }

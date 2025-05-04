@@ -2,7 +2,6 @@ using Microsoft.Extensions.Logging;
 using ShelterNet.Application.Abstractions.Data;
 using ShelterNet.Application.Abstractions.Messaging.Commands;
 using ShelterNet.Application.Abstractions.Services;
-using ShelterNet.Application.Auth;
 using ShelterNet.Domain.Entities;
 using ShelterNet.Domain.Enums;
 

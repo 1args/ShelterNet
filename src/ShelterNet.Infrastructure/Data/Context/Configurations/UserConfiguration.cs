@@ -20,9 +20,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 
         builder.Property(u => u.PasswordHash)
             .IsRequired();
-                
-        builder.Property(u => u.Role)
-            .IsRequired()
-            .HasConversion<string>();
+
+        builder.HasMany(u => u.Roles)
+            .WithMany(r => r.Users)
+            .UsingEntity<UserRole>(
+                l => l.HasOne<Role>().WithMany().HasForeignKey(r => r.RoleId),
+                r => r.HasOne<User>().WithMany().HasForeignKey(l => l.UserId));
     }
 }

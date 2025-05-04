@@ -876,6 +876,9 @@
         }
       },
       "ShelterNet.Contracts/1.0.0": {
+        "dependencies": {
+          "ShelterNet.Domain": "1.0.0"
+        },
         "runtime": {
           "ShelterNet.Contracts.dll": {
             "assemblyVersion": "1.0.0",

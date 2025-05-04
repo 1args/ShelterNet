@@ -10,3 +10,7 @@ C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\refint\ShelterNet.Contracts.dll
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.pdb
 C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ref\ShelterNet.Contracts.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\bin\Debug\net9.0\ShelterNet.Domain.dll
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\bin\Debug\net9.0\ShelterNet.Domain.pdb
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterNet.Contracts.csproj.AssemblyReference.cache
+C:\Users\incrysteer 1args\RiderProjects\ShelterNet\src\ShelterNet.Contracts\obj\Debug\net9.0\ShelterN.73EC46A5.Up2Date

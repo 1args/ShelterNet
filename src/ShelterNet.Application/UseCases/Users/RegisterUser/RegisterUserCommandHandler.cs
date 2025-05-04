@@ -9,6 +9,7 @@ namespace ShelterNet.Application.UseCases.Users.RegisterUser;
 
 public sealed class RegisterUserCommandHandler(
     IRepository<User> userRepository,
+    IRepository<Role> roleRepository,
     IPasswordHasher passwordHasher,
     ILogger<RegisterUserCommandHandler> logger) : ICommandHandler<RegisterUserCommand>
 {
@@ -25,13 +26,20 @@ public sealed class RegisterUserCommandHandler(
         
         var passwordHash = passwordHasher.HashPassword(command.Password);
 
+        var role = await roleRepository
+                       .SingleOrDefaultAsync(
+                           r => r.Id == (int)Domain.Enums.Role.Analyst, 
+                           cancellationToken) 
+                   ?? throw new InvalidOperationException($"Role with id {(int)Domain.Enums.Role.Analyst} does not exist.");
+
         var user = new User
         {
             FullName = command.FullName,
             Email = command.Email,
             PasswordHash = passwordHash,
+            Roles = new List<Role> { role }
         };
-        
+
         await userRepository.AddAsync(user, cancellationToken);
         logger.LogInformation("User created successfully with ID `{UserId}`.", user.Id);
     }

@@ -1,12 +1,12 @@
 using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 using ShelterNet.Application.Abstractions.Auth;
 using ShelterNet.Application.Abstractions.Data;
-using Microsoft.AspNetCore.Http;
 using ShelterNet.Application.Abstractions.Services;
 using ShelterNet.Application.Exceptions;
 using ShelterNet.Domain.Entities;
 
-namespace ShelterNet.Application.Auth;
+namespace ShelterNet.Application.Services;
 
 public class AuthService(
     IRepository<User> userRepository,
@@ -20,8 +20,7 @@ public class AuthService(
     {
         var claims = new List<Claim>
         {
-            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new(ClaimTypes.Role, user.Role.ToString())
+            new(ClaimTypes.NameIdentifier, user.Id.ToString())
         }; 
         return jwtProvider.GenerateAccessToken(claims);
     }

@@ -1,4 +1,4 @@
-using ShelterNet.Domain.Enums;
+using ShelterNet.Domain.Primitives;
 
 namespace ShelterNet.Domain.Entities;
 
@@ -16,8 +16,8 @@ public class User : Entity<Guid>
     /// <summary>Hashed password</summary>
     public string PasswordHash { get; set; }
 
-    /// <summary>User role in the system</summary>
-    public UserRole Role { get; set; }
+    /// <summary>User roles in the system</summary>
+    public ICollection<Role> Roles { get; set; }
 
     public User() { }
 }

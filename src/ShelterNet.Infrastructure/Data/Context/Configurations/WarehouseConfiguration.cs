@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShelterNet.Domain.Entities;
+using ShelterNet.Domain.Enums;
 
 namespace ShelterNet.Infrastructure.Data.Context.Configurations;
 
@@ -25,10 +27,13 @@ public class WarehouseConfiguration : IEntityTypeConfiguration<Warehouse>
         builder.Property(w => w.Address)
             .IsRequired()
             .HasMaxLength(500);
-                
+        
         builder.Property(w => w.Mode)
             .IsRequired()
-            .HasConversion<string>();
+            .HasColumnType("text")
+            .HasConversion(
+                v => v.ToString(),
+                v => (OperationalMode)Enum.Parse(typeof(OperationalMode), v));
                 
         builder.Property(w => w.Capacity)
             .IsRequired();

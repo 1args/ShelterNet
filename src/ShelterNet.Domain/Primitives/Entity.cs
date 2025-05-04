@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ShelterNet.Domain.Entities;
+namespace ShelterNet.Domain.Primitives;
 
 /// <summary>
 /// Entity base class with primary key
@@ -10,5 +10,5 @@ public abstract class Entity<TKey> where TKey : struct
 {
     /// <summary>Unique entity identifier</summary>
     [Key]
-    public virtual TKey Id { get; protected set; }
+    public virtual TKey Id { get; init; }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ShelterNet.Api.Authorization;
 using ShelterNet.Application.Abstractions.Messaging.Commands;
 using ShelterNet.Application.Abstractions.Messaging.Queries;
 using ShelterNet.Application.UseCases.Warehouses.GetAvailableCapacity;
@@ -6,6 +7,7 @@ using ShelterNet.Application.UseCases.Warehouses.GetCriticalResources;
 using ShelterNet.Application.UseCases.Warehouses.UpdateWarehouseStatus;
 using ShelterNet.Contracts.ApiContracts.Responses;
 using ShelterNet.Domain.Entities;
+using Permission = ShelterNet.Domain.Enums.Permission;
 
 namespace ShelterNet.Api.Controllers;
 
@@ -13,10 +15,11 @@ namespace ShelterNet.Api.Controllers;
 [Route("/api/warehouses")]
 public class WarehousesController(
     ICommandHandler<UpdateWarehouseStatusCommand> updateWarehouseHandler,
-    IQueryHandler<GetCriticalResourcesQuery, IEnumerable<InventoryItem>> getCriticalResourcesHandler,
+    IQueryHandler<GetCriticalResourcesQuery, IEnumerable<InventoryItemResponse>> getCriticalResourcesHandler,
     IQueryHandler<GetAvailableCapacityQuery, AvailableCapacityResponse> getAvailableCapacityHandler) : ControllerBase
 {
-    [HttpPatch("update")]
+    [HttpPatch("/update")]
+    [HasPermission(Permission.Access)]
     public async Task<ActionResult> UpdateWarehouseStatusAsync(
         [FromBody] UpdateWarehouseStatusCommand warehouseCommand,
         CancellationToken cancellationToken)
@@ -25,21 +28,25 @@ public class WarehousesController(
         return Ok();
     }
     
-    [HttpGet("resources")]
+    [HttpGet("{id:guid}/resources")]
+    [HasPermission(Permission.Read)]
     public async Task<ActionResult> GetCriticalResourcesAsync(
-        [FromRoute] GetCriticalResourcesQuery warehouseCommand,
+        [FromRoute] Guid id,
         CancellationToken cancellationToken)
     {
-        var data = await getCriticalResourcesHandler.HandleAsync(warehouseCommand, cancellationToken);
+        var data = await getCriticalResourcesHandler.HandleAsync(
+            new GetCriticalResourcesQuery(id), cancellationToken);
         return Ok(data);
     }
     
-    [HttpGet("capacity")]
+    [HttpGet("{id:guid}/capacity")]
+    [HasPermission(Permission.Read)]
     public async Task<ActionResult> GetAvailableCapacityAsync(
-        [FromRoute] GetAvailableCapacityQuery warehouseCommand,
+        [FromRoute] Guid id,
         CancellationToken cancellationToken)
     {
-        var data = await getAvailableCapacityHandler.HandleAsync(warehouseCommand, cancellationToken);
+        var data = await getAvailableCapacityHandler.HandleAsync(
+            new GetAvailableCapacityQuery(id), cancellationToken);
         return Ok(data);
     }
 }

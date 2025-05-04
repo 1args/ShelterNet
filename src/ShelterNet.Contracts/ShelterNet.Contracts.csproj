@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ShelterNet.Domain\ShelterNet.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

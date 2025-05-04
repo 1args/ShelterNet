@@ -141,6 +141,9 @@
       "System.Buffers/4.6.0": {},
       "System.Text.Encodings.Web/8.0.0": {},
       "ShelterNet.Contracts/1.0.0": {
+        "dependencies": {
+          "ShelterNet.Domain": "1.0.0"
+        },
         "runtime": {
           "ShelterNet.Contracts.dll": {
             "assemblyVersion": "1.0.0",

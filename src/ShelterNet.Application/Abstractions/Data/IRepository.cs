@@ -25,12 +25,19 @@ public interface IRepository<TEntity> where TEntity : class
     IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> expression);
 
     Task<bool> AnyAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken);
-    
+
     Task<TEntity?> SingleOrDefaultAsync(
         Expression<Func<TEntity, bool>> expression,
         CancellationToken cancellationToken,
         bool tracking = true,
-        params Expression<Func<TEntity, object>>[] includes);
+        Expression<Func<TEntity, object>>? include = null);
+
+    Task<TEntity?> SingleOrDefaultWithIncludesAsync<TPreviousProperty, TProperty>(
+        Expression<Func<TEntity, bool>> expression,
+        CancellationToken cancellationToken,
+        Expression<Func<TEntity, TPreviousProperty>> include1,
+        Expression<Func<TPreviousProperty, TProperty>> include2,
+        bool tracking = true);
     
     Task<List<TEntity>> ToListAsync(
         CancellationToken cancellationToken,

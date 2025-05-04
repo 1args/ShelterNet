@@ -3,7 +3,6 @@ using ShelterNet.Application.Abstractions.Auth;
 using ShelterNet.Application.Abstractions.Messaging.Commands;
 using ShelterNet.Application.Abstractions.Messaging.Queries;
 using ShelterNet.Application.Abstractions.Services;
-using ShelterNet.Application.Auth;
 using ShelterNet.Application.Services;
 using ShelterNet.Application.UseCases.Disasters.ProcessDisaster;
 using ShelterNet.Application.UseCases.TransferRequests.ApproveTransferRequest;
@@ -41,7 +40,7 @@ public static class ApplicationExtensions
             .AddScoped<ICommandHandler<RejectTransferRequestCommand>, RejectTransferRequestCommandHandler>();
 
         services
-            .AddScoped<IQueryHandler<GetCriticalResourcesQuery, IEnumerable<InventoryItem>>, GetCriticalResourcesQueryHandler>()
+            .AddScoped<IQueryHandler<GetCriticalResourcesQuery, IEnumerable<InventoryItemResponse>>, GetCriticalResourcesQueryHandler>()
             .AddScoped<IQueryHandler<GetAvailableCapacityQuery, AvailableCapacityResponse>, GetAvailableCapacityQueryHandler>();
         
         return services;

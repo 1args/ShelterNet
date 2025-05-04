@@ -6,11 +6,11 @@ namespace ShelterNet.Domain.Enums;
 public enum Role
 {
     /// <summary>Analyst with access to reports and analytics</summary>
-    Analyst = 0,
+    Analyst = 1,
 
     /// <summary>Manager of a specific warehouse</summary>
-    WarehouseManager = 1,
+    WarehouseManager = 2,
 
     /// <summary>Member of central management with full system access</summary>
-    CentralManagement = 2,
+    CentralManagement = 3,
 }

@@ -11,6 +11,7 @@ public static class InfrastructureExtensions
         services.AddDataAccess(configuration)
             .AddAuthRegister(configuration)
             .AddSmtpConfiguration(configuration)
+            .AddAuthRegister(configuration)
             .AddHostedService<WarehouseMonitoringBackgroundService>();
         
         return services;

@@ -22,6 +22,7 @@ public static class DataAccessExtensions
             options.UseNpgsql(
                 configuration.GetConnectionString("DefaultConnection"),
                 o => o.CommandTimeout(60));
+            options.EnableSensitiveDataLogging();
             options.UseLoggerFactory(loggerFactory);
         });
         

@@ -100,6 +100,50 @@ namespace ShelterNet.Infrastructure.Migrations
                     b.ToTable("InventoryItems");
                 });
 
+            modelBuilder.Entity("ShelterNet.Domain.Entities.Permission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Permission");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Access"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Create"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Read"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Update"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Delete"
+                        });
+                });
+
             modelBuilder.Entity("ShelterNet.Domain.Entities.Resource", b =>
                 {
                     b.Property<Guid>("Id")
@@ -133,6 +177,112 @@ namespace ShelterNet.Infrastructure.Migrations
                     b.ToTable("Resources");
                 });
 
+            modelBuilder.Entity("ShelterNet.Domain.Entities.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Analyst"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "WarehouseManager"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "CentralManagement"
+                        });
+                });
+
+            modelBuilder.Entity("ShelterNet.Domain.Entities.RolePermission", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("RoleId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("RolePermission");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 1
+                        },
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 3
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            PermissionId = 1
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            PermissionId = 2
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            PermissionId = 3
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            PermissionId = 4
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 1
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 2
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 3
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 4
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 5
+                        });
+                });
+
             modelBuilder.Entity("ShelterNet.Domain.Entities.TransferRequest", b =>
                 {
                     b.Property<Guid>("Id")
@@ -141,6 +291,9 @@ namespace ShelterNet.Infrastructure.Migrations
 
                     b.Property<DateTime?>("CompletedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("CreatorId")
+                        .HasColumnType("uuid");
 
                     b.Property<Guid>("DestinationWarehouseId")
                         .HasColumnType("uuid");
@@ -189,13 +342,24 @@ namespace ShelterNet.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ShelterNet.Domain.Entities.UserRole", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRole");
                 });
 
             modelBuilder.Entity("ShelterNet.Domain.Entities.Warehouse", b =>
@@ -206,8 +370,7 @@ namespace ShelterNet.Infrastructure.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
+                        .HasColumnType("text");
 
                     b.Property<int>("Capacity")
                         .HasColumnType("integer");
@@ -216,19 +379,17 @@ namespace ShelterNet.Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("Latitude")
-                        .HasColumnType("decimal(9,6)");
+                        .HasColumnType("numeric");
 
                     b.Property<decimal>("Longitude")
-                        .HasColumnType("decimal(9,6)");
+                        .HasColumnType("numeric");
 
-                    b.Property<string>("Mode")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Mode")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -236,32 +397,6 @@ namespace ShelterNet.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Warehouses");
-                });
-
-            modelBuilder.Entity("ShelterNet.Domain.Entities.WarehouseAccess", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("AccessLevel")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.HasIndex("UserId", "WarehouseId")
-                        .IsUnique();
-
-                    b.ToTable("WarehouseAccesses");
                 });
 
             modelBuilder.Entity("ShelterNet.Domain.Entities.InventoryItem", b =>
@@ -281,6 +416,21 @@ namespace ShelterNet.Infrastructure.Migrations
                     b.Navigation("Resource");
 
                     b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("ShelterNet.Domain.Entities.RolePermission", b =>
+                {
+                    b.HasOne("ShelterNet.Domain.Entities.Permission", null)
+                        .WithMany()
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShelterNet.Domain.Entities.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ShelterNet.Domain.Entities.TransferRequest", b =>
@@ -310,33 +460,24 @@ namespace ShelterNet.Infrastructure.Migrations
                     b.Navigation("SourceWarehouse");
                 });
 
-            modelBuilder.Entity("ShelterNet.Domain.Entities.WarehouseAccess", b =>
+            modelBuilder.Entity("ShelterNet.Domain.Entities.UserRole", b =>
                 {
-                    b.HasOne("ShelterNet.Domain.Entities.User", "User")
-                        .WithMany("WarehouseAccesses")
+                    b.HasOne("ShelterNet.Domain.Entities.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShelterNet.Domain.Entities.User", null)
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ShelterNet.Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-
-                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("ShelterNet.Domain.Entities.Resource", b =>
                 {
                     b.Navigation("InventoryItems");
-                });
-
-            modelBuilder.Entity("ShelterNet.Domain.Entities.User", b =>
-                {
-                    b.Navigation("WarehouseAccesses");
                 });
 
             modelBuilder.Entity("ShelterNet.Domain.Entities.Warehouse", b =>

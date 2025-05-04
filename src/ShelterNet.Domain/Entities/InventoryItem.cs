@@ -1,3 +1,5 @@
+using ShelterNet.Domain.Primitives;
+
 namespace ShelterNet.Domain.Entities;
 
 /// <summary>

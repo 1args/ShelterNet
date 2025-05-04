@@ -212,7 +212,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\incrysteer 1args\\RiderProjects\\ShelterNet\\src\\ShelterNet.Domain\\ShelterNet.Domain.csproj": {
+                "projectPath": "C:\\Users\\incrysteer 1args\\RiderProjects\\ShelterNet\\src\\ShelterNet.Domain\\ShelterNet.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

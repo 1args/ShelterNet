@@ -31,7 +31,7 @@ public class Disaster : Entity<Guid>
     public DateTime? EndTime { get; set; }
     
     /// <summary>Detailed description of the disaster</summary>
-    public string Description { get; set; }gia
+    public string Description { get; set; }
 
     public Disaster() { }
 }

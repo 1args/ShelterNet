@@ -8,7 +8,7 @@ using ShelterNet.Infrastructure.Data.Repositories;
 
 namespace ShelterNet.Infrastructure.Extensions;
 
-public static class DataAccessRegister
+public static class DataAccessExtensions
 {
     public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {

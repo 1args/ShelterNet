@@ -5,7 +5,7 @@ using ShelterNet.Infrastructure.Options;
 
 namespace ShelterNet.Api.Extensions;
 
-public static class AuthRegister
+public static class AuthExtensions
 {
     public static IServiceCollection AddAuthenticationRules(
         this IServiceCollection services,

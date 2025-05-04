@@ -4,7 +4,7 @@ using ShelterNet.Infrastructure.BackgroundServices;
 
 namespace ShelterNet.Infrastructure.Extensions;
 
-public static class InfrastructureRegister
+public static class InfrastructureExtensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {

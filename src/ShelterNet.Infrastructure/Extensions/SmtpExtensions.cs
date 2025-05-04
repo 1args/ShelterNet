@@ -6,7 +6,7 @@ using ShelterNet.Infrastructure.Options;
 
 namespace ShelterNet.Infrastructure.Extensions;
 
-public static class SmtpRegister
+public static class SmtpExtensions
 {
     public static IServiceCollection AddSmtpConfiguration(
         this IServiceCollection services, 

@@ -21,7 +21,7 @@ using ShelterNet.Domain.Entities;
 
 namespace ShelterNet.Application.Extensions;
 
-public static class ApplicationRegister 
+public static class ApplicationExtensions 
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {

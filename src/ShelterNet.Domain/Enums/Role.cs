@@ -3,7 +3,7 @@ namespace ShelterNet.Domain.Enums;
 /// <summary>
 /// Role of a user in the system
 /// </summary>
-public enum UserRole
+public enum Role
 {
     /// <summary>Analyst with access to reports and analytics</summary>
     Analyst = 0,
